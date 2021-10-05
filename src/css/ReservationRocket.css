@@ -5,3 +5,13 @@
   font-weight: bold;
   padding: 0.7rem 2rem;
 }
+
+.cancel-rocket {
+  background-color: #ffffff;
+  color: #6d757d;
+  border-width: 1px;
+  border-color: #6d757d;
+  border-radius: 4%;
+  font-weight: bold;
+  padding: 0.7rem 2rem;
+}

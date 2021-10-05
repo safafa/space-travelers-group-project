@@ -16,7 +16,7 @@ const ReservationRocket = ({ rocketId }) => {
   return (
     <>
       <button type="button" className="Reserve-Rocket" onClick={bookBotton}> Reserve Rocket</button>
-      <button type="button" className="Reserve-Rocket" onClick={cancelBotton}> Cancel Rocket</button>
+      <button type="button" className="cancel-rocket" onClick={cancelBotton}> Cancel Rocket</button>
     </>
   );
 };
