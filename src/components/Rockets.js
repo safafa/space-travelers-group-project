@@ -4,9 +4,10 @@ import Rocket from './Rocket';
 
 const RocketsComponent = ({ rockets }) => {
   const rocketList = rockets.map((rocket) => {
-    const { id, description } = rocket;
-    const name = rocket.rocket_name;
-    return (<Rocket key={id} name={name} type={description} image={rocket.flickr_images[0]} />);
+    const {
+      id, name, type, flickrImages,
+    } = rocket;
+    return (<Rocket key={id} name={name} type={type} image={flickrImages[0]} />);
   });
   return (
     <section>
