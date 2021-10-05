@@ -1,10 +1,12 @@
+/* eslint-disable react/forbid-prop-types */
 import PropTypes from 'prop-types';
 import Rocket from './Rocket';
 
 const RocketsComponent = ({ rockets }) => {
   const rocketList = rockets.map((rocket) => {
-    const { name, type, image } = rocket;
-    return (Rocket(name, type, image));
+    const { id, description } = rocket;
+    const name = rocket.rocket_name;
+    return (<Rocket key={id} name={name} type={description} image={rocket.flickr_images[0]} />);
   });
   return (
     <section>
@@ -13,6 +15,6 @@ const RocketsComponent = ({ rockets }) => {
   );
 };
 
-RocketsComponent.propTypes = { rockets: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.object())) };
-RocketsComponent.propTypes = { rockets: PropTypes.isRequired };
+RocketsComponent.propTypes = { rockets: PropTypes.array.isRequired };
+
 export default RocketsComponent;
