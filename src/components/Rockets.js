@@ -1,6 +1,7 @@
 /* eslint-disable react/forbid-prop-types */
 import PropTypes from 'prop-types';
 import Rocket from './Rocket';
+import '../css/Rockets.css';
 
 const RocketsComponent = ({ rockets }) => {
   const rocketList = rockets.map((rocket) => {
@@ -10,7 +11,7 @@ const RocketsComponent = ({ rockets }) => {
     return (<Rocket key={id} name={name} type={type} image={flickrImages[0]} />);
   });
   return (
-    <section>
+    <section className="rockets-section d-flex">
       {rocketList}
     </section>
   );
