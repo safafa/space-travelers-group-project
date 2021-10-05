@@ -16,7 +16,7 @@ const Rocket = ({
         )}
         {type}
       </p>
-      <ReservationRocket rocketId={id} />
+      <ReservationRocket rocketId={id} reserved={reserved} />
     </div>
   </div>
 );
