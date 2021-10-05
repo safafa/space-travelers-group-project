@@ -3,6 +3,7 @@ import {
 } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import logo from '../assets/logo.png';
+import '../css/MainNavigation.css';
 
 const MainNavigation = () => (
   <Navbar bg="light">
@@ -12,9 +13,9 @@ const MainNavigation = () => (
         <span className>Space Travelers&apos; Hub</span>
       </Navbar.Brand>
       <Nav className="ms-auto">
-        <LinkContainer to="/rockets"><span className="me-3">Rockets</span></LinkContainer>
-        <LinkContainer to="/missions"><span className="me-3">Missions</span></LinkContainer>
-        <LinkContainer to="/my-profile"><span className="me-3">My Profile</span></LinkContainer>
+        <LinkContainer to="/rockets" activeClassName="active"><span className="nav-link me-3">Rockets</span></LinkContainer>
+        <LinkContainer to="/missions" activeClassName="active"><span className="nav-link me-3">Missions</span></LinkContainer>
+        <LinkContainer to="/my-profile" activeClassName="active"><span className="nav-link me-3">My Profile</span></LinkContainer>
       </Nav>
     </Container>
   </Navbar>
