@@ -6,3 +6,9 @@
   width: 15rem;
   margin: 0 2rem;
 }
+
+.tag {
+  background-color:#18a2b8 !important;
+  color: #fff;
+  margin-right: 2px;
+}

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Badge } from 'react-bootstrap';
 import ReservationRocket from './ReservationRocket';
 import '../css/Rocket.css';
 
@@ -9,7 +10,10 @@ const Rocket = ({
     <img src={image} alt="Rocket" className="rocket-image" />
     <div>
       <h1 className="rocket-name">{name}</h1>
-      <p className="rocket-type">{type}</p>
+      <p className="rocket-type">
+        <Badge className="tag">Reserved</Badge>
+        {type}
+      </p>
       <ReservationRocket rocketId={id} />
     </div>
   </div>
