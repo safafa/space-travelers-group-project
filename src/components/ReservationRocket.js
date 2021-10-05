@@ -6,6 +6,7 @@ import { bookRocket, cancelRocket } from '../redux/Rockets/rockets';
 const ReservationRocket = ({ rocketId }) => {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rocketsReducer);
+  const rocket = rockets[rocketId - 1];
   const bookBotton = () => {
     dispatch(bookRocket(rockets, rocketId));
   };
@@ -15,8 +16,12 @@ const ReservationRocket = ({ rocketId }) => {
 
   return (
     <>
+      {!rocket.reserved && (
       <button type="button" className="Reserve-Rocket" onClick={bookBotton}> Reserve Rocket</button>
+      )}
+      {rocket.reserved && (
       <button type="button" className="cancel-rocket" onClick={cancelBotton}> Cancel Rocket</button>
+      )}
     </>
   );
 };
