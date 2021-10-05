@@ -8,7 +8,7 @@ const RocketsComponent = ({ rockets }) => {
     const {
       id, name, type, flickrImages,
     } = rocket;
-    return (<Rocket key={id} name={name} type={type} image={flickrImages[0]} />);
+    return (<Rocket key={id} id={id} name={name} type={type} image={flickrImages[0]} />);
   });
   return (
     <section className="rockets-section d-flex">
