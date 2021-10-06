@@ -25,8 +25,8 @@ const Mission = () => {
           id, name, desc, reserved,
         }) => (
           <tr key={id}>
-            <td>{name}</td>
-            <td>{desc}</td>
+            <td className="fw-bold">{name}</td>
+            <td className="text-secondary">{desc}</td>
             <td><Badge className={reserved ? 'bg-info' : 'bg-secondary'}>{reserved ? 'Active Member' : 'NOT A MEMBER'}</Badge></td>
             <td>
               <input type="button" className={reserved ? 'leave' : 'join'} value={reserved ? 'Leave mission' : 'Join Mission'} onClick={() => handleBooking(items, id)} />
