@@ -1,3 +1,7 @@
+table > td {
+  padding: 30px;
+}
+
 .table-responsive {
     margin: 20px;
   }
