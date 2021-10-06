@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Table } from 'react-bootstrap';
+import { Table, Badge, Button } from 'react-bootstrap';
 import { fetchMissions } from '../../redux/Missions/missionReducer';
 import TableHeader from './TableHeader';
 import '../../css/Table.css';
@@ -14,7 +14,7 @@ const Mission = () => {
   }, []);
 
   return (
-    <Table responsive striped bordered variant="primary">
+    <Table responsive striped bordered variant="light">
       <TableHeader />
       {items.map((mission) => (
         <tbody key={mission.id}>
@@ -23,8 +23,8 @@ const Mission = () => {
               <>
                 <td key={index}>{mission.name}</td>
                 <td key={index}>{mission.desc}</td>
-                <td key={index}>status</td>
-                <td key={index}>actions</td>
+                <td key={index}><Badge bg="secondary">NOT A MEMBER</Badge></td>
+                <td key={index}><Button variant="outline-secondary">Join Mission</Button></td>
               </>
             ))}
           </tr>
