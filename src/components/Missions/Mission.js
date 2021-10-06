@@ -13,6 +13,7 @@ const Mission = () => {
 
   return (
     <div>
+      <TableHeader />
       {items.map((mission) => (
         <div key={mission.id}>
           <p>{mission.name}</p>
