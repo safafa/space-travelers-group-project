@@ -6,11 +6,11 @@ import logo from '../assets/logo.png';
 import '../css/MainNavigation.css';
 
 const MainNavigation = () => (
-  <Navbar bg="light">
+  <Navbar bg="white">
     <Container>
-      <Navbar.Brand href="#home">
-        <Image src={logo} width="30" height="30" alt="Space Travelers' logo" />
-        <span className>Space Travelers&apos; Hub</span>
+      <Navbar.Brand href="/rockets">
+        <Image src={logo} width="40" height="40" alt="Space Travelers' logo" />
+        <span className="fs-2">Space Travelers&apos; Hub</span>
       </Navbar.Brand>
       <Nav className="ms-auto">
         <LinkContainer to="/rockets" activeClassName="active"><span className="nav-link me-3">Rockets</span></LinkContainer>
