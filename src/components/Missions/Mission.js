@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Table } from 'react-bootstrap';
 import { fetchMissions } from '../../redux/Missions/missionReducer';
-// import TableBody from './TableBody';
 import TableHeader from './TableHeader';
 import '../../css/Table.css';
 
