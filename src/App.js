@@ -30,7 +30,7 @@ function App() {
           <Missions />
         </Route>
         <Route path="/my-profile">
-          <MyProfile />
+          <MyProfile rockets={rockets} />
         </Route>
       </Switch>
     </Container>
