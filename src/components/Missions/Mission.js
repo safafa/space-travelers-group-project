@@ -24,7 +24,7 @@ const Mission = () => {
                 <td key={index}>{mission.name}</td>
                 <td key={index}>{mission.desc}</td>
                 <td key={index}><Badge bg="secondary">NOT A MEMBER</Badge></td>
-                <td key={index}><Button variant="outline-secondary">Join Mission</Button></td>
+                <td key={index}><Button variant="outline-secondary" size="sm">Join Mission</Button></td>
               </>
             ))}
           </tr>
