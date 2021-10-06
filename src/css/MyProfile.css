@@ -6,14 +6,14 @@
   width: 40%;
 }
 
-.myRocket-list {
+.item-list {
   list-style: none;
   border-radius: 1.5%;
   border-color: #dfdfdf;
   padding: 0;
 }
 
-.myRocket-name {
+.item-name {
   border-bottom: solid;
   padding: 1rem 1rem;
 }
