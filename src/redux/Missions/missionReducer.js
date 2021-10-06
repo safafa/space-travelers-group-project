@@ -21,16 +21,22 @@ const missionReducer = (state = [], action) => {
     case ActionTypes.GET_MISSIONS:
       return [...payload];
     case ActionTypes.BOOK_MISSION: {
-      return state.map((mission) => {
-        if (mission.mission_id !== action.id) return mission;
+      const newState = state.map((mission) => {
+        if (mission.mission_id !== payload.mission_id) {
+          return mission;
+        }
         return { ...mission, reserved: true };
       });
+      return [...newState];
     }
     case ActionTypes.CANCEL_MISSION: {
-      return state.map((mission) => {
-        if (mission.mission_id !== action.id) return mission;
+      const newState = state.map((mission) => {
+        if (mission.mission_id !== payload.mission_id) {
+          return mission;
+        }
         return { ...mission, reserved: false };
       });
+      return [...newState];
     }
     default:
       return state;

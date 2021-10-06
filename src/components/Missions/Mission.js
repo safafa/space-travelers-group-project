@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Table, Badge } from 'react-bootstrap';
 import { fetchMissions } from '../../redux/Missions/missionReducer';
-import { bookMission } from '../../redux/Missions/missionActions';
+import { bookMission, cancelMission } from '../../redux/Missions/missionActions';
 import TableHeader from './TableHeader';
 import '../../css/Table.css';
 
@@ -15,7 +15,11 @@ const Mission = () => {
   }, []);
 
   const handleMission = (id) => (e) => {
-    if (e.target.value === 'Join Mission') dispatch(bookMission(id));
+    if (e.target.value === 'Join Mission') {
+      dispatch(bookMission(id));
+    } else if (e.target.value === 'Leave Mission') {
+      dispatch(cancelMission(id));
+    }
   };
 
   return (
