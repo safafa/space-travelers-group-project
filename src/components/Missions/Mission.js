@@ -10,7 +10,9 @@ const Mission = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMissions());
+    if (items.length === 0) {
+      dispatch(fetchMissions());
+    }
   }, []);
 
   const handleBooking = (payload, id) => {
@@ -27,7 +29,7 @@ const Mission = () => {
           <tr key={id}>
             <td className="fw-bold">{name}</td>
             <td className="text-secondary">{desc}</td>
-            <td><Badge className={reserved ? 'bg-info' : 'bg-secondary'}>{reserved ? 'Active Member' : 'NOT A MEMBER'}</Badge></td>
+            <td className="status"><Badge className={reserved ? 'bg-info' : 'bg-secondary'}>{reserved ? 'Active Member' : 'NOT A MEMBER'}</Badge></td>
             <td>
               <input type="button" className={reserved ? 'leave' : 'join'} value={reserved ? 'Leave mission' : 'Join Mission'} onClick={() => handleBooking(items, id)} />
             </td>
