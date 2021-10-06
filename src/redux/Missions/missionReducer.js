@@ -1,6 +1,6 @@
 import axios from 'axios';
 import ActionTypes from './action-types';
-import getMissions from './missionActions';
+import { getMissions } from './missionActions';
 
 export const fetchMissions = () => async (dispatch) => {
   await axios.get('https://api.spacexdata.com/v3/missions')
@@ -20,6 +20,12 @@ const missionReducer = (state = [], action) => {
   switch (type) {
     case ActionTypes.GET_MISSIONS:
       return [...payload];
+    case ActionTypes.BOOK_MISSION: {
+      return state.map((mission) => {
+        if (mission.mission_id !== action.id) return mission;
+        return { ...mission, reserved: true };
+      });
+    }
     default:
       return state;
   }

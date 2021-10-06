@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Table, Badge, Button } from 'react-bootstrap';
+import { Table, Badge } from 'react-bootstrap';
 import { fetchMissions } from '../../redux/Missions/missionReducer';
+import { bookMission } from '../../redux/Missions/missionActions';
 import TableHeader from './TableHeader';
 import '../../css/Table.css';
 
@@ -13,23 +14,25 @@ const Mission = () => {
     dispatch(fetchMissions());
   }, []);
 
+  const handleMission = (id) => (e) => {
+    if (e.target.value === 'Join Mission') dispatch(bookMission(id));
+  };
+
   return (
     <Table responsive striped bordered variant="light">
       <TableHeader />
-      {items.map((mission) => (
-        <tbody key={mission.id}>
-          <tr>
-            {Array.from({ length: 1 }).map((index) => (
-              <>
-                <td key={index}>{mission.name}</td>
-                <td key={index}>{mission.desc}</td>
-                <td key={index}><Badge bg="secondary">NOT A MEMBER</Badge></td>
-                <td key={index}><Button variant="outline-secondary" size="sm">Join Mission</Button></td>
-              </>
-            ))}
+      <tbody>
+        {items.map(({
+          id, name, desc, reserved,
+        }) => (
+          <tr key={id}>
+            <td>{name}</td>
+            <td>{desc}</td>
+            <td><Badge bg="secondary">NOT A MEMBER</Badge></td>
+            <td><input type="button" value={reserved ? 'Leave Mission' : 'Join Mission'} onClick={handleMission(id)} /></td>
           </tr>
-        </tbody>
-      ))}
+        ))}
+      </tbody>
     </Table>
   );
 };

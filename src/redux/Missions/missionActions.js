@@ -1,7 +1,11 @@
 import ActionTypes from './action-types';
 
-const getMissions = (missions) => ({
+export const getMissions = (payload) => ({
   type: ActionTypes.GET_MISSIONS,
-  payload: missions,
+  payload,
 });
-export default getMissions;
+
+export const bookMission = (payload) => ({
+  type: ActionTypes.BOOK_MISSION,
+  payload,
+});
