@@ -16,20 +16,22 @@ const Mission = () => {
   return (
     <Table responsive striped bordered variant="light">
       <TableHeader />
-      {items.map((mission) => (
-        <tbody key={mission.id}>
-          <tr>
-            {Array.from({ length: 1 }).map((index) => (
+      <tbody>
+        {items.map((mission) => (
+
+          <tr key={mission.id}>
+            {Array.from({ length: 1 }).map(() => (
               <>
-                <td key={index}>{mission.name}</td>
-                <td key={index}>{mission.desc}</td>
-                <td key={index}><Badge bg="secondary">NOT A MEMBER</Badge></td>
-                <td key={index}><Button variant="outline-secondary" size="sm">Join Mission</Button></td>
+                <td>{mission.name}</td>
+                <td>{mission.desc}</td>
+                <td><Badge bg="secondary">NOT A MEMBER</Badge></td>
+                <td><Button variant="outline-secondary" size="sm">Join Mission</Button></td>
               </>
             ))}
           </tr>
-        </tbody>
-      ))}
+
+        ))}
+      </tbody>
     </Table>
   );
 };

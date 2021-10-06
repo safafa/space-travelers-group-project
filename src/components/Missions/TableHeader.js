@@ -1,12 +1,12 @@
 const TableHeader = () => (
   <thead>
     <tr>
-      {Array.from({ length: 1 }).map((index) => (
+      {Array.from({ length: 1 }).map(() => (
         <>
-          <th key={index}>Missions</th>
-          <th key={index}>Description</th>
-          <th key={index}>Status</th>
-          <th key={index}>Actions</th>
+          <th>Missions</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Actions</th>
         </>
       ))}
     </tr>
