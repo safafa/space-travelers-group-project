@@ -27,11 +27,9 @@ const Mission = () => {
           <tr key={id}>
             <td>{name}</td>
             <td>{desc}</td>
-            <td><Badge bg="secondary">NOT A MEMBER</Badge></td>
+            <td><Badge bg="secondary">{reserved ? 'Active Member' : 'NOT A MEMBER'}</Badge></td>
             <td>
-              <button type="button" onClick={() => handleBooking(items, id)}>
-                {reserved ? 'Leave mission' : 'Join Mission'}
-              </button>
+              <input type="button" value={reserved ? 'Leave mission' : 'Join Mission'} onClick={() => handleBooking(items, id)} />
             </td>
           </tr>
         ))}
