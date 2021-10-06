@@ -8,8 +8,6 @@
 
 .myRocket-list {
   list-style: none;
-  border-width: 1px;
-  border-style: solid;
   border-radius: 1.5%;
   border-color: #dfdfdf;
   padding: 0;
@@ -17,7 +15,10 @@
 
 .myRocket-name {
   border-bottom: solid;
+  padding: 1rem 1rem;
+}
+
+.border {
   border-width: 1px;
   border-color: #dfdfdf;
-  padding: 1rem 1rem;
 }

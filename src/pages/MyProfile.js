@@ -4,7 +4,7 @@ import '../css/MyProfile.css';
 
 const MyProfile = ({ rockets }) => {
   const myRockets = rockets.filter((rocket) => rocket.reserved);
-  const list = myRockets.map((rocket) => (<li className="myRocket-name" key={rocket.id}>{rocket.name}</li>));
+  const list = myRockets.map((rocket) => (<li className="myRocket-name border" key={rocket.id}>{rocket.name}</li>));
   return (
     <section className="d-flex myprofile-section">
       <div className="my-div">
@@ -12,9 +12,11 @@ const MyProfile = ({ rockets }) => {
       </div>
       <div className="my-div">
         <h1>My Rockets</h1>
-        <ul className="myRocket-list">
+        {list.length !== 0 && (
+        <ul className="myRocket-list border">
           {list}
         </ul>
+        )}
       </div>
     </section>
   );
