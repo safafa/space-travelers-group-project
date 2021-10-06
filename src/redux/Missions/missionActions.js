@@ -9,8 +9,3 @@ export const bookMission = (payload) => ({
   type: ActionTypes.BOOK_MISSION,
   payload,
 });
-
-export const cancelMission = (payload) => ({
-  type: ActionTypes.CANCEL_MISSION,
-  payload,
-});

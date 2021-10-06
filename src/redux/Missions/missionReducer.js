@@ -21,22 +21,8 @@ const missionReducer = (state = [], action) => {
     case ActionTypes.GET_MISSIONS:
       return [...payload];
     case ActionTypes.BOOK_MISSION: {
-      const newState = state.map((mission) => {
-        if (mission.mission_id !== payload.mission_id) {
-          return mission;
-        }
-        return { ...mission, reserved: true };
-      });
-      return [...newState];
-    }
-    case ActionTypes.CANCEL_MISSION: {
-      const newState = state.map((mission) => {
-        if (mission.mission_id !== payload.mission_id) {
-          return mission;
-        }
-        return { ...mission, reserved: false };
-      });
-      return [...newState];
+      // eslint-disable-next-line max-len
+      return state.map((mission) => (mission.mission_id !== payload.id ? mission : { ...mission, reserved: !mission.reserved }));
     }
     default:
       return state;
