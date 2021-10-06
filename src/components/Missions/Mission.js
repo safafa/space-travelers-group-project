@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Table, Badge } from 'react-bootstrap';
-import { fetchMissions } from '../../redux/Missions/missionReducer';
-import { bookMission } from '../../redux/Missions/missionActions';
+import { fetchMissions, bookMission } from '../../redux/Missions/missionReducer';
 import TableHeader from './TableHeader';
 import '../../css/Table.css';
 
@@ -14,8 +13,8 @@ const Mission = () => {
     dispatch(fetchMissions());
   }, []);
 
-  const handleBooking = (payload) => {
-    dispatch(bookMission(payload));
+  const handleBooking = (payload, id) => {
+    dispatch(bookMission(payload, id));
   };
 
   return (
@@ -30,7 +29,7 @@ const Mission = () => {
             <td>{desc}</td>
             <td><Badge bg="secondary">NOT A MEMBER</Badge></td>
             <td>
-              <button type="button" onClick={(itemId) => handleBooking(itemId)}>
+              <button type="button" onClick={() => handleBooking(items, id)}>
                 {reserved ? 'Leave mission' : 'Join Mission'}
               </button>
             </td>

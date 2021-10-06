@@ -15,15 +15,21 @@ export const fetchMissions = () => async (dispatch) => {
     });
 };
 
+export const bookMission = (state, id) => (dispatch) => {
+  const newState = state.map((mission) => {
+    if (mission.id !== id) return mission;
+    return { ...mission, reserved: !mission.reserved };
+  });
+  dispatch({ type: ActionTypes.BOOK_MISSION, newState });
+};
+
 const missionReducer = (state = [], action) => {
   const { type, payload } = action;
   switch (type) {
     case ActionTypes.GET_MISSIONS:
       return [...payload];
-    case ActionTypes.BOOK_MISSION: {
-      // eslint-disable-next-line max-len
-      return state.map((mission) => (mission.mission_id !== payload.id ? mission : { ...mission, reserved: !mission.reserved }));
-    }
+    case ActionTypes.BOOK_MISSION:
+      return action.newState;
     default:
       return state;
   }
