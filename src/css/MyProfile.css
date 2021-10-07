@@ -1,0 +1,24 @@
+.myprofile-section {
+  justify-content: space-around;
+}
+
+.my-div {
+  width: 40%;
+}
+
+.item-list {
+  list-style: none;
+  border-radius: 1.5%;
+  border-color: #dfdfdf;
+  padding: 0;
+}
+
+.item-name {
+  border-bottom: solid;
+  padding: 1rem 1rem;
+}
+
+.border {
+  border-width: 1px;
+  border-color: #dfdfdf;
+}

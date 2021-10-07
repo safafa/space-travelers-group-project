@@ -1,8 +1,19 @@
 import { render, screen } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import store from './redux/configureStore';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App', () => {
+  test('renders App component', () => {
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>,
+    );
+    screen.getByText('Rockets');
+    expect(screen.getByText('Missions')).toBeInTheDocument();
+  });
 });

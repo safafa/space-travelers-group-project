@@ -1,0 +1,13 @@
+.navbar {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.nav-link {
+  color: #007bff !important;
+  cursor: pointer;
+}

@@ -1,0 +1,19 @@
+table > td {
+  padding: 30px;
+}
+
+.table-responsive {
+  margin: 20px;
+}
+
+.leave {
+  color: red;
+  background: none;
+  border: 1px solid #ea858f;
+}
+
+.join {
+  color: #3b4147;
+  background: none;
+  border: 1px solid #767a7e;
+}

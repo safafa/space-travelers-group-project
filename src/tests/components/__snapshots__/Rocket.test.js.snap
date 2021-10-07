@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rocket component snapshot test 1`] = `
+<div
+  className="rocket-card d-flex"
+>
+  <img
+    alt="Rocket"
+    className="rocket-image"
+    src="test"
+  />
+  <div>
+    <h1
+      className="rocket-name"
+    >
+      test
+    </h1>
+    <p
+      className="rocket-type"
+    >
+      <span
+        className="tag badge bg-primary"
+      >
+        Reserved
+      </span>
+      Test test
+    </p>
+    <button
+      className="cancel-rocket"
+      onClick={[Function]}
+      type="button"
+    >
+       Cancel Rocket
+    </button>
+  </div>
+</div>
+`;
