@@ -1,6 +1,8 @@
 # Space Travelers' Hub
 
 Space Travelers' Hub is a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
+![image](https://user-images.githubusercontent.com/43698511/136356603-5cfb9d1c-588e-4c32-9c2f-a02a081214d1.png)
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
