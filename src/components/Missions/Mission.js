@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Table, Badge } from 'react-bootstrap';
-import { fetchMissions } from '../../redux/Missions/missionReducer';
-import { bookMission } from '../../redux/Missions/missionActions';
+import { fetchMissions, bookMission } from '../../redux/Missions/missionReducer';
 import TableHeader from './TableHeader';
 import '../../css/Table.css';
 
@@ -11,11 +10,13 @@ const Mission = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMissions());
+    if (items.length === 0) {
+      dispatch(fetchMissions());
+    }
   }, []);
 
-  const handleMission = (id) => (e) => {
-    if (e.target.value === 'Join Mission') dispatch(bookMission(id));
+  const handleBooking = (payload, id) => {
+    dispatch(bookMission(payload, id));
   };
 
   return (
@@ -26,10 +27,12 @@ const Mission = () => {
           id, name, desc, reserved,
         }) => (
           <tr key={id}>
-            <td>{name}</td>
-            <td>{desc}</td>
-            <td><Badge bg="secondary">NOT A MEMBER</Badge></td>
-            <td><input type="button" value={reserved ? 'Leave Mission' : 'Join Mission'} onClick={handleMission(id)} /></td>
+            <td className="fw-bold">{name}</td>
+            <td className="text-secondary">{desc}</td>
+            <td className="status"><Badge className={reserved ? 'bg-info' : 'bg-secondary'}>{reserved ? 'Active Member' : 'NOT A MEMBER'}</Badge></td>
+            <td>
+              <input type="button" className={reserved ? 'leave' : 'join'} value={reserved ? 'Leave mission' : 'Join Mission'} onClick={() => handleBooking(items, id)} />
+            </td>
           </tr>
         ))}
       </tbody>
