@@ -28,7 +28,7 @@ Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ## Live Demo
-[Live Demo](https://relaxed-nightingale-a1e9b4.netlify.app/)
+[Live Demo](https://stoic-cray-211f6e.netlify.app/rockets)
 
 ## Author
 
