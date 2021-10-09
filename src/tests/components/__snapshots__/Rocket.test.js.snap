@@ -25,13 +25,12 @@ exports[`Rocket component snapshot test 1`] = `
       </span>
       Test test
     </p>
-    <button
+    <input
       className="cancel-rocket"
       onClick={[Function]}
       type="button"
-    >
-       Cancel Rocket
-    </button>
+      value="Cancel Rocket"
+    />
   </div>
 </div>
 `;
